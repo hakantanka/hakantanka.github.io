@@ -1,0 +1,128 @@
+.infoBox {
+  position: absolute;
+  z-index: 2;
+  bottom: 40px;
+  left: 40px;
+  width: 32vw;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  opacity: 0;
+  transform: translateX(-200px);
+  transition: transform 0.7s ease, opacity 0.7s ease;
+
+  .navigation {
+    display: flex;
+    align-items: flex-end;
+    height: 60px;
+
+    a { 
+      height: 50px;
+      line-height: 50px;
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.9rem;
+      padding: 0 20px;
+      letter-spacing: 2px;
+      background-color: #ee2b2b;
+      margin-right: 5px;
+      transition: all 0.2s linear;
+    }
+
+    .selected {
+      height: 60px;
+      background-color: black;
+      padding: 5px 35px;
+      font-size: 2.1rem;
+    }
+  }
+
+  .contentWrap {
+    padding: 20px 0;
+    background-color: #000;
+
+    .content {
+      height: 350px;
+      color: #fff;
+      padding: 0 20px;
+      font-size: 1.1rem;
+      letter-spacing: 1.1px;
+
+
+      #generalCont {
+        ul {
+          list-style: none;
+
+          li {
+            line-height: 2.7rem;
+
+            strong {
+              padding-left: 20px;
+              font-size: 1.4rem;
+            }
+          }
+
+          hr {
+            margin-bottom: 10px;
+            opacity: 0.5;
+          }
+        }
+      }
+
+      #wikiBox {
+        display: none;
+        overflow: scroll;
+        overflow-x: hidden;
+        height: 100%;
+        text-align: justify;
+
+        #wikiCont {
+          padding-right: 10px;
+        }
+      }
+
+      #anthemCont {
+        display: none;
+        height: 100%;
+
+        #loading {
+          padding: 50px 20px;
+          color: #fff;
+          text-align: center;
+          font-size: 1.5rem;
+          font-style: italic;
+          font-weight: 700;
+        }
+
+        iframe {
+          width: 100%;
+          height: 100px;
+          padding: 0 20px;            
+        }
+      }
+    }
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ee2b2b;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: darken($color: #ee2b2b, $amount: 10)
+  }
+

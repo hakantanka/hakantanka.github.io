@@ -1,0 +1,631 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.infoBox {
+  position: absolute;
+  z-index: 2;
+  bottom: 40px;
+  left: 40px;
+  width: 32vw;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  opacity: 0;
+  -webkit-transform: translateX(-200px);
+          transform: translateX(-200px);
+  -webkit-transition: opacity 0.7s ease, -webkit-transform 0.7s ease;
+  transition: opacity 0.7s ease, -webkit-transform 0.7s ease;
+  transition: transform 0.7s ease, opacity 0.7s ease;
+  transition: transform 0.7s ease, opacity 0.7s ease, -webkit-transform 0.7s ease;
+}
+
+.infoBox .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  height: 60px;
+}
+
+.infoBox .navigation a {
+  height: 50px;
+  line-height: 50px;
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.9rem;
+  padding: 0 20px;
+  letter-spacing: 2px;
+  background-color: #ee2b2b;
+  margin-right: 5px;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+}
+
+.infoBox .navigation .selected {
+  height: 60px;
+  background-color: black;
+  padding: 5px 35px;
+  font-size: 2.1rem;
+}
+
+.infoBox .contentWrap {
+  padding: 20px 0;
+  background-color: #000;
+}
+
+.infoBox .contentWrap .content {
+  height: 350px;
+  color: #fff;
+  padding: 0 20px;
+  font-size: 1.1rem;
+  letter-spacing: 1.1px;
+}
+
+.infoBox .contentWrap .content #generalCont ul {
+  list-style: none;
+}
+
+.infoBox .contentWrap .content #generalCont ul li {
+  line-height: 2.7rem;
+}
+
+.infoBox .contentWrap .content #generalCont ul li strong {
+  padding-left: 20px;
+  font-size: 1.4rem;
+}
+
+.infoBox .contentWrap .content #generalCont ul hr {
+  margin-bottom: 10px;
+  opacity: 0.5;
+}
+
+.infoBox .contentWrap .content #wikiBox {
+  display: none;
+  overflow: scroll;
+  overflow-x: hidden;
+  height: 100%;
+  text-align: justify;
+}
+
+.infoBox .contentWrap .content #wikiBox #wikiCont {
+  padding-right: 10px;
+}
+
+.infoBox .contentWrap .content #anthemCont {
+  display: none;
+  height: 100%;
+}
+
+.infoBox .contentWrap .content #anthemCont #loading {
+  padding: 50px 20px;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.infoBox .contentWrap .content #anthemCont iframe {
+  width: 100%;
+  height: 100px;
+  padding: 0 20px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ee2b2b;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #d51111;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  font-family: 'Open Sans Condensed', sans-serif;
+  overflow: hidden;
+}
+
+.cb-slideshow {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 0;
+}
+
+.cb-slideshow li span {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: transparent;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: none;
+  opacity: 0;
+  z-index: 0;
+  -webkit-animation: imageAnimation 132s linear infinite 0s;
+          animation: imageAnimation 132s linear infinite 0s;
+}
+
+.cb-slideshow li:nth-child(1) span {
+  background-image: url(/src/img/rhyno.jpg);
+}
+
+.cb-slideshow li:nth-child(2) span {
+  background-image: url(/src/img/lion.jpg);
+  -webkit-animation-delay: 12s;
+          animation-delay: 12s;
+}
+
+.cb-slideshow li:nth-child(3) span {
+  background-image: url(/src/img/city.jpg);
+  -webkit-animation-delay: 24s;
+          animation-delay: 24s;
+}
+
+.cb-slideshow li:nth-child(4) span {
+  background-image: url(/src/img/wedding.jpg);
+  -webkit-animation-delay: 36s;
+          animation-delay: 36s;
+}
+
+.cb-slideshow li:nth-child(5) span {
+  background-image: url(/src/img/hypho.jpg);
+  -webkit-animation-delay: 48s;
+          animation-delay: 48s;
+}
+
+.cb-slideshow li:nth-child(6) span {
+  background-image: url(/src/img/savana.jpg);
+  -webkit-animation-delay: 60s;
+          animation-delay: 60s;
+}
+
+.cb-slideshow li:nth-child(7) span {
+  background-image: url(/src/img/kids.jpg);
+  -webkit-animation-delay: 72s;
+          animation-delay: 72s;
+}
+
+.cb-slideshow li:nth-child(8) span {
+  background-image: url(/src/img/elephants.jpg);
+  -webkit-animation-delay: 84s;
+          animation-delay: 84s;
+}
+
+.cb-slideshow li:nth-child(9) span {
+  background-image: url(/src/img/jungle.jpg);
+  -webkit-animation-delay: 96s;
+          animation-delay: 96s;
+}
+
+.cb-slideshow li:nth-child(10) span {
+  background-image: url(/src/img/leopard.jpg);
+  -webkit-animation-delay: 108s;
+          animation-delay: 108s;
+}
+
+.cb-slideshow li:nth-child(11) span {
+  background-image: url(/src/img/cape_town.jpg);
+  -webkit-animation-delay: 120s;
+          animation-delay: 120s;
+}
+
+.container {
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+}
+
+.container .map {
+  z-index: 2;
+}
+
+.container .map #africa {
+  margin-left: 0px;
+  width: 100vw;
+  height: auto;
+  max-height: 100vh;
+  stroke: #ee2b2b;
+  color: transparent;
+  stroke-width: 2px;
+}
+
+.container .map #africa path {
+  cursor: pointer;
+}
+
+.container .map #africa path:hover {
+  color: #ee2b2b;
+}
+
+.container .map .select {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 30px;
+  width: 300px;
+}
+
+.container .map .select #select {
+  font-size: 1.2rem;
+  border: none;
+  height: 35px;
+  margin-bottom: 20px;
+  border: 2px solid #ee2b2b;
+  background-color: #000;
+  color: #fff;
+}
+
+.container .map .select #select:focus {
+  outline: none;
+}
+
+.container .map .select input {
+  outline-color: #fff;
+  font-size: 1.2rem;
+  color: #fff;
+  border: none;
+  background-color: #ee2b2b;
+  height: 35px;
+}
+
+.container .nameAndFlag {
+  position: absolute;
+  z-index: 2;
+  top: 40px;
+  right: 40px;
+  max-width: 25vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.container .nameAndFlag #countryName {
+  color: #fff;
+  padding-bottom: 10px;
+  font-size: 4.5rem;
+  line-height: 4.5rem;
+  text-transform: uppercase;
+  text-align: end;
+}
+
+.container .nameAndFlag #countryName span {
+  opacity: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.container .nameAndFlag #countryName span.letterLoad {
+  opacity: 1;
+}
+
+.container .nameAndFlag #flag {
+  max-width: 300px;
+  height: auto;
+  opacity: 1;
+}
+
+.container #close {
+  position: absolute;
+  z-index: 4;
+  top: 35px;
+  fill: #ee2b2b;
+  margin-left: 87vw;
+  width: 70px;
+  height: 70px;
+  display: none;
+  cursor: pointer;
+}
+
+.container #mobileBG {
+  display: none;
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 70vw;
+  margin-left: 15vw;
+  height: calc(100vh - 60px);
+}
+
+@-webkit-keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  5% {
+    opacity: 0.5;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  15% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes imageAnimation {
+  0% {
+    opacity: 0;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  5% {
+    opacity: 0.5;
+    -webkit-animation-timing-function: ease-out;
+            animation-timing-function: ease-out;
+  }
+  10% {
+    opacity: 0.5;
+  }
+  15% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes flagAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flagAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes mapRight {
+  to {
+    margin-left: 40vw;
+  }
+}
+
+@keyframes mapRight {
+  to {
+    margin-left: 40vw;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .container .map #africa {
+    width: 60vw;
+    margin-left: 20vw;
+  }
+  .container .nameAndFlag {
+    left: 40px;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    max-width: 40vw;
+  }
+  .container .nameAndFlag #countryName {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+    text-align: start;
+  }
+  .container .infoBox {
+    width: 40vw;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .map #africa {
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    width: 90vw;
+    margin: 0 5vw;
+  }
+  .container .nameAndFlag {
+    max-width: 60vw;
+    margin-left: 20vw;
+    left: 0px;
+    top: 70px;
+  }
+  .container .infoBox {
+    width: 60vw;
+    margin-left: 20vw;
+    left: 0px;
+    bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .cb-slideshow {
+    display: none;
+  }
+  .container {
+    position: relative;
+  }
+  .container .map {
+    width: 100vw;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    height: 100vh;
+  }
+  .container .map #africa {
+    position: unset;
+    width: 90vw;
+    margin: 0 5vw;
+  }
+  .container .map .select {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .container .nameAndFlag {
+    width: 80vw;
+    margin-left: 10vw;
+    top: 40px;
+  }
+  .container .infoBox {
+    width: 80vw;
+    margin-left: 10vw;
+    bottom: 40px;
+  }
+  .container #mobileBG {
+    width: 90vw;
+    margin-left: 5vw;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+  .container .map {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    background-color: black;
+  }
+  .container .nameAndFlag {
+    top: 60px;
+  }
+  .container .nameAndFlag #countryName {
+    font-size: 2.5rem;
+    line-height: 2.5rem;
+  }
+  .container .nameAndFlag #flag {
+    max-width: 200px;
+  }
+  .container .infoBox {
+    bottom: 30px;
+    left: 0px;
+    top: 300px;
+    margin-left: 0;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .container .infoBox .navigation {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    background-color: #000;
+    width: 100vw;
+    height: 44px;
+  }
+  .container .infoBox .navigation a {
+    font-size: 1.5rem;
+    margin: 0;
+    border: 2px solid #000;
+    height: 40px;
+    line-height: 36px;
+    text-align: center;
+  }
+  .container .infoBox .navigation .selected {
+    height: 40px;
+    background-color: black;
+    padding: 0px 20px;
+    font-size: 1.5rem;
+  }
+  .container .infoBox .contentWrap {
+    width: 100vw;
+  }
+  .container .infoBox .contentWrap .content {
+    height: 300px;
+    font-size: 1rem;
+  }
+  .container .infoBox .contentWrap .content #generalCont ul li {
+    line-height: 2rem;
+  }
+  .container .infoBox .contentWrap .content #generalCont ul li strong {
+    padding-left: 10px;
+    font-size: 1.2rem;
+  }
+  .container #mobileBG {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+  }
+  .container #close {
+    width: 40px;
+    height: 40px;
+    margin-left: 0;
+    top: 30px;
+    right: 30px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
