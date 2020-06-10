@@ -4,8 +4,6 @@ let countryData;
 let countryID;
 let clickedMap = false;
 
-console.log(navigator.userAgent);
-
 // fire event only when the path element is clicked
 svg.addEventListener('click', e => {if(e.target.id.length === 2) loadInfo(e.target);});
 
