@@ -4,11 +4,15 @@ let countryData;
 let countryID;
 let clickedMap = false;
 
+console.log(navigator.userAgent);
+
 // fire event only when the path element is clicked
 svg.addEventListener('click', e => {if(e.target.id.length === 2) loadInfo(e.target);});
 
 // set body height
-document.body.style.height = window.clientHeight;
+let vh = window.innerHeight * 0.01;
+// document.body.style.height = window.clientHeight;
+document.body.style.setProperty('--vh', `${vh}px`);
 
 // set margin left of the map according to viewport width
 window.addEventListener('resize', () => {  
