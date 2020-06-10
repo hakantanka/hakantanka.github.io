@@ -250,19 +250,20 @@ body {
 .container {
   position: absolute;
   z-index: 1;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 .container .map {
+  height: 100%;
   z-index: 2;
 }
 
 .container .map #africa {
   margin-left: 0px;
-  width: 100vw;
+  width: 100%;
   height: auto;
-  max-height: 100vh;
+  max-height: 100%;
   stroke: #ee2b2b;
   color: transparent;
   stroke-width: 2px;
