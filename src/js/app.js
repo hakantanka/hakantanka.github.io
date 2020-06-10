@@ -8,11 +8,11 @@ let clickedMap = false;
 svg.addEventListener('click', e => {if(e.target.id.length === 2) loadInfo(e.target);});
 
 // set body height
-document.body.style.height = window.innerHeight;
+document.body.style.height = window.clientHeight;
 
 // set margin left of the map according to viewport width
 window.addEventListener('resize', () => {  
-    document.body.style.height = window.innerHeight; 
+    document.body.style.height = window.clientHeight; 
     if(window.innerWidth > 1600) {svg.style.marginLeft = '0px'}
     else if(window.innerWidth > 1300) {
         if(clickedMap) {
