@@ -130,8 +130,10 @@ body {
                 height: 35px;
                 margin-bottom: 20px;
                 border: 2px solid #ee2b2b;
+                border-radius: none;
                 background-color: #000;
                 color: #fff;
+                appearance: none;
             }
 
             #select:focus {
@@ -145,6 +147,8 @@ body {
                 border: none;
                 background-color: #ee2b2b;
                 height: 35px;
+                border-radius: none;
+                appearance: none;
             }
         }
     }
