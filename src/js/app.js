@@ -31,6 +31,8 @@ window.addEventListener('resize', () => {
             document.querySelector('.nameAndFlag').style.zIndex = 3;
             document.querySelector('.infoBox').style.zIndex = 3;
         } else { svg.style.marginLeft = '5vw' }
+    } else if(window.innerWidth <851) {
+        if(clickedMap) { document.querySelector('.select').style.opacity = 0; }
     }
 });
 
@@ -139,6 +141,7 @@ function showTabletInfo() {
     document.querySelector('#mobileBG').style.display = 'block';
     document.querySelector('#close').style.display = 'block';
     document.querySelector('.infoBox').style.zIndex = 3;
+    document.querySelector('.select').style.opacity = 0;
 }
 
 function closeTabletInfo() {
@@ -153,6 +156,7 @@ function closeTabletInfo() {
     document.querySelector('#flag').style.opacity = 0;
     document.querySelectorAll('#countryName span').forEach(span => span.style.opacity = 0);
     document.querySelectorAll('path').forEach(path => path.style.color = 'transparent'); 
+    document.querySelector('.select').style.opacity = 1;
     stopAnthem();
 }
 
