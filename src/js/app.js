@@ -9,7 +9,6 @@ svg.addEventListener('click', e => {if(e.target.id.length === 2) loadInfo(e.targ
 
 // set body height
 let vh = window.innerHeight * 0.01;
-// document.body.style.height = window.clientHeight;
 document.documentElement.style.setProperty('--vh', `${vh}px`);
 
 // set margin left of the map according to viewport width
@@ -28,6 +27,7 @@ window.addEventListener('resize', () => {
             svg.style.marginLeft = '5vw';
             document.querySelector('#mobileBG').style.display = 'block';
             document.querySelector('#close').style.display = 'block';
+            document.querySelector('#close').addEventListener('click', closeTabletInfo);
             document.querySelector('.nameAndFlag').style.zIndex = 3;
             document.querySelector('.infoBox').style.zIndex = 3;
         } else { svg.style.marginLeft = '5vw' }
